@@ -1,0 +1,2 @@
+# FAQs
+practicing DOM scripting
