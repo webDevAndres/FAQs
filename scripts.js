@@ -5,7 +5,8 @@ var $ = function (id) {
 };
 
 var toggle = function () {
-    var h2 = this;
+    var link = this;
+    var h2 = link.parentNode;
     var div = h2.nextElementSibling;
 
     // toggle images
@@ -26,13 +27,13 @@ var toggle = function () {
 
 window.onload = function () {
     var faqs = $("faqs");
-    var h2Elements = faqs.getElementsByTagName("h2");
+    var linkElements = faqs.getElementsByTagName("a");
 
-    // attach the event handler to elements
-    for (var i = 0; i < h2Elements.length; i++) {
-        h2Elements[i].onclick = toggle;
+    // attach the event handler to link elements
+    for (var i = 0; i < linkElements.length; i++) {
+        linkElements[i].onclick = toggle;
     }
 
-    // set focus on first h2 tag 
-    h2Elements[0].firstChild.focus();
+    // set focus on first a tag 
+    linkElements[0].focus();
 };
